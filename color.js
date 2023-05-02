@@ -63,7 +63,6 @@ function handleDragOver(event) {
     event.preventDefault();
 }
 function handleDrop(event) {
-    console.log(event);
     event.preventDefault();
     const file = event.dataTransfer.files[0];
     const reader = new FileReader();
@@ -74,7 +73,6 @@ function handleDrop(event) {
         };
         uploadedImage.src = event.target.result;
     };
-    console.log(file,reader)
     reader.readAsDataURL(file);
 }
 function handlePaste(e) {
