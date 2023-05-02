@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color picker from img</title>
+    <style>
+        body{
+            margin:0;
+            background-color: #d1cfcf;
+        }
+        h1{
+            text-align: center;
+            color:blue;
+        }
+        canvas{
+            cursor: pointer;
+        }
+        #image-container {
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 85vh;
+        }
+        #imginput{
+            margin-left: 20%;
+        }
+        #savedlstbtn{
+            position:fixed;right:0;top:30%;
+            writing-mode: vertical-rl;
+            cursor: pointer;
+            background-color: rgb(192, 247, 228);
+            font-size: 24px;
+        }
+        #savedlst{
+            text-align: center;
+            white-space: pre;
+        }
+    </style>
+</head>
+<body>
+    <h1>取色工具(圖片、截圖)</h1>
+    <div id="savedinfo"></div>
+    <div id="image-container">
+        <img id="image-upload">
+    </div>
+    <input type="file" id="imginput"/><input type="color" id="showcolor"/>
+    <span>色彩 :  </span><span id="colorinfo"></span>  <button onclick="saveColor()">儲存</button>
+    <div id="savedlst"></div>
+    <script src="./color.js" ></script>
+</body>
+</html>
