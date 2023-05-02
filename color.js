@@ -116,5 +116,4 @@ ctx.fillText("1.拖曳照片至此處", window.innerWidth*0.3, window.innerHeigh
 ctx.fillText("2.點下方按鈕選擇檔案上傳", window.innerWidth*0.3, window.innerHeight*0.3);
 ctx.fillText("3.截圖或複製圖片後按 Ctrl+ V", window.innerWidth*0.3, window.innerHeight*0.4);
 ctx.fillText("-點選圖片中的色彩儲存在下方", window.innerWidth*0.3, window.innerHeight*0.5);
-ctx.fillText("-(或)輸入色彩輸入框後點儲存按鈕", window.innerWidth*0.3, window.innerHeight*0.6);
 imageContainer.appendChild(canvas);
