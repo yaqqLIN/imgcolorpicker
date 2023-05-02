@@ -36,31 +36,31 @@ function drawImageOnCanvas() {
 }
 
 function handleImageUpload(event) {
-const file = event.target.files[0];
-const reader = new FileReader();
-reader.onload = function(event) {
-    uploadedImage = new Image();
-    uploadedImage.onload = function() {
-    drawImageOnCanvas();
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.onload = function(event) {
+        uploadedImage = new Image();
+        uploadedImage.onload = function() {
+        drawImageOnCanvas();
+        };
+        uploadedImage.src = event.target.result;
     };
-    uploadedImage.src = event.target.result;
-};
-reader.readAsDataURL(file);
+    reader.readAsDataURL(file);
 }
 
 function handleMouseMove(event) {
-const rect = canvas.getBoundingClientRect();
-const x = event.clientX - rect.left;
-const y = event.clientY - rect.top;
-const pixelData = ctx.getImageData(x, y, 1, 1).data;
-const color = `rgb(${pixelData[0]}, ${pixelData[1]}, ${pixelData[2]})`;
-const hexcolor=rgbToHex(pixelData[0],pixelData[1], pixelData[2]);
-showcolor.value=hexcolor;
-colorinfo.textContent = color +"  HEX:" +hexcolor;
+    const rect = canvas.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+    const pixelData = ctx.getImageData(x, y, 1, 1).data;
+    const color = `rgb(${pixelData[0]}, ${pixelData[1]}, ${pixelData[2]})`;
+    const hexcolor=rgbToHex(pixelData[0],pixelData[1], pixelData[2]);
+    showcolor.value=hexcolor;
+    colorinfo.textContent = color +"  HEX:" +hexcolor;
 }
 
 function handleDragOver(event) {
-event.preventDefault();
+    event.preventDefault();
 }
 function handleDrop(event) {
     console.log(event);
@@ -74,6 +74,7 @@ function handleDrop(event) {
         };
         uploadedImage.src = event.target.result;
     };
+    console.log(file,reader)
     reader.readAsDataURL(file);
 }
 function handlePaste(e) {
